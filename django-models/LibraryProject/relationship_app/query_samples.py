@@ -16,17 +16,19 @@ def get_books_by_author(author_name):
 
 # List all books in a specific library
 def get_books_in_library(library_name):
-    library = Library.objects.filter(name=library_name).first()
-    if library:
+    try:
+        library = Library.objects.get(name=library_name)
         return library.books.all()
-    return None
+    except Library.DoesNotExist:
+        return None
 
 # Retrieve the librarian for a specific library
 def get_librarian_for_library(library_name):
-    library = Library.objects.filter(name=library_name).first()
-    if library:
+    try:
+        library = Library.objects.get(name=library_name)
         return library.librarian
-    return None
+    except Library.DoesNotExist:
+        return None
 
 if __name__ == "__main__":
     print("Books by Author John Doe:", get_books_by_author("John Doe"))
