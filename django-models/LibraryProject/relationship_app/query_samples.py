@@ -11,7 +11,7 @@ from relationship_app.models import Author, Book, Library, Librarian
 def get_books_by_author(author_name):
     try:
         author = Author.objects.get(name=author_name)
-        return author.book_set.all()  # Assuming a ForeignKey(Book -> Author)
+        return author.book_set.all()  # Using reverse relation from Book to Author
     except Author.DoesNotExist:
         return None
 
