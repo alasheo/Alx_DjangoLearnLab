@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Book, Library  # ✅ Make sure Library is imported
+from .models import Book, Library  # ✅ Import Library model here
 
 # Function-based view to list all books
 def list_books(request):
