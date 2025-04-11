@@ -19,8 +19,9 @@ def get_books_in_library(library_name):
 
 # Retrieve the librarian for a specific library
 def get_librarian_for_library(library_name):
-    library = Library.objects.get(name=library_name)  # Optional but consistent
-    return library.librarian
+    library = Library.objects.get(name=library_name)  # REQUIRED
+    librarian = Librarian.objects.get(library=library)  # ✅ REQUIRED
+    return librarian
 
 if __name__ == "__main__":
     print("Books by Author John Doe:", get_books_by_author("John Doe"))
