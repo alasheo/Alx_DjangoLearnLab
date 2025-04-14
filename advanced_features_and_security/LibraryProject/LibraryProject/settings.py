@@ -91,3 +91,28 @@ SECURE_BROWSER_XSS_FILTER = True
 CSP_DEFAULT_SRC = ("'self'",)
 CSP_SCRIPT_SRC = ("'self'", "https://trusted.cdn.com")
 CSP_STYLE_SRC = ("'self'", "https://fonts.googleapis.com")
+# --- Security Settings for Proxy SSL Handling ---
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# --- Secure Cookie Settings ---
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+# --- Security Headers ---
+X_FRAME_OPTIONS = 'DENY'
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+
+# --- HTTPS Enforced ---
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 31536000  # One year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+# --- Allowed Hosts ---
+ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com']
+
+# --- Content Security Policy ---
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_SCRIPT_SRC = ("'self'", "https://trusted.cdn.com")
+CSP_STYLE_SRC = ("'self'", "https://fonts.googleapis.com")
