@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import permission_required
 from django.views.decorators.csrf import csrf_protect
 from .models import Book
 from django import forms
+from .forms import BookForm
 
 # --- Form class to validate inputs and avoid raw request.POST usage ---
 class BookForm(forms.ModelForm):
