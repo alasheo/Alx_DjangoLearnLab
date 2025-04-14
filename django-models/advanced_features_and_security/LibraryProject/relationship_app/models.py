@@ -1,11 +1,7 @@
 from django.db import models
-<<<<<<< HEAD
 
 # Create your models here.
 
-=======
-from django.contrib.auth.models import User
->>>>>>> 51216ea (Initial commit)
 
 class Author(models.Model):
     name = models.CharField(max_length=255)

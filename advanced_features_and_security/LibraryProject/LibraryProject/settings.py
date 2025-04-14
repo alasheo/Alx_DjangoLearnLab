@@ -41,19 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookshelf',  # Existing app
     'relationship_app',  # Add this line
-<<<<<<< HEAD
-    'accounts',
-    
-
-
-]
-AUTH_USER_MODEL = 'accounts.CustomUser'
-=======
 
 
 ]
 
->>>>>>> 51216ea (Initial commit)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
