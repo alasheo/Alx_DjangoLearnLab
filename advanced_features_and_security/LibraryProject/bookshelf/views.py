@@ -1,14 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import permission_required
 from django.views.decorators.csrf import csrf_protect
+from django import forms
 from .models import Book
-from .forms import BookForm, ExampleForm  # Import the ExampleForm
-
-# --- Form class to validate inputs and avoid raw request.POST usage ---
-class BookForm(forms.ModelForm):
-    class Meta:
-        model = Book
-        fields = ['title', 'author', 'publication_year']
+from .forms import BookForm, ExampleForm  # Import these from forms.py
 
 # Book List View
 @permission_required('bookshelf.can_view', raise_exception=True)
